@@ -9,25 +9,23 @@ import java.util.*;
 public class Main{
     public static void main(String args[]){
       Scanner scanner = new Scanner(System.in);
-
-      int opciones, opcion; //Variable que almacenara un valor de tipo entero.
-
+      FuncionesMenu Main = new FuncionesMenu();
+      ListarProductos Lista = new ListarProductos();
+      int Menu, MenuProducto, MenuListar; //Variable que almacenara un valor de tipo entero.
+      String valor2;
       while(true){ //bucle para el menu.
+        Main.ImprimirBienvenida(); //Titulo de bienveida
+        Main.ImprimirMenu(); //Lista del menu principal
+        Menu = scanner.nextInt(); //Variable donde almacenara el dato introducido.
 
-        //Titulo de bienveida
-        System.out.println("Bienvenido!!");
-        System.out.println("Aqui ira una función que imprima el menu con las opciones que tengamos ");
-
-        opcion = scanner.nextInt(); // Donde almacenamos el caracter introducido y dependerá del caracta la funcion a realizar
-
-        switch(opcion) { //Los botones de las acciones.
-          case 1: //Primera función
-              //Aqui entramos en un submenu que esta dentro del menu principal
-              System.out.println(" Aqui ira otro menu en relacion a los productos ya sea para registrar,actualizar o eliminar"); // Poner una funcion que imprima un menu
-              opciones = scanner.nextInt(); //Pedira un valor y dependiendo del valor  introducido hara una accion
-                    switch(opciones) {
+        switch(Menu) { //Los botones de las acciones.
+          case 1: //Opcion produto
+              Main.ImprimirMenuProducto(); //Imprime el submenu de producto
+              MenuProducto = scanner.nextInt(); //Pedira un valor y dependiendo del valor  introducido hara una accion
+                    switch(MenuProducto) {
                       case 1: //Primera funcio
                         System.out.println("Registrar producto nuevo");
+                        //RegistrarProducto();
                       break;
 
                       case 2: //Segunda funcion
@@ -39,36 +37,58 @@ public class Main{
                       break;
 
                       case 4: //Cuarta funcion
-                        System.out.println("Salir o Volver al principio");
-
+                        System.out.println("Volver al menu principal");
                       break;
-                    }
+                      default: System.out.println("No hay ninguna función para este número");
+                    } //Cierre del segundo switch
+                    Main.clearScreen();//Limpiar consola
               break;
 
           case 2: //Segunda funcion
-              System.out.println(" opcion de listar");
-            //char opcion = scanner.next().charAt(0);
-            break;
+                //Main.clearScreen();//Limpiar consola
+                Main.ImprimirMenuListar();
+                MenuListar = scanner.nextInt();
+                switch (MenuListar) { // Menu para listar
+                  case 1:
+                    System.out.println("Lista de Todos los Productos");
+                    Lista.ListarTodos();
+                    break;
+
+                  case 2:
+                    Lista.ListarMarca();
+                    break;
+
+                  case 3:
+                    System.out.println("Mostrar Stock");
+                    break;
+
+                  case 4:
+                    System.out.println("Mostrar vendidos");
+                    break;
+
+                  default: System.out.println("No hay ninguna función para este número");
+                }
+                //Main.clearScreen();//Limpiar consola
+              break;
 
           case 3: //Tercera funcion
-              System.out.println("Poner los productos como vendido");
-              //char opcion = scanner.next().charAt(0);
+              System.out.println("Establecer estado del producto");
               break;
 
           case 4: //Cuarta funcion
-              System.out.println("Opcion de salir");
-              int salir = 6;
-              //char opcion = scanner.next().charAt(0);
+              System.out.println("Ventas");
+              break;
+          case 5:
+              System.out.println("Saliendo del menu");
               break;
           default: System.out.println("Este numero no tiene ninguna funcion asignada");
-        }
-        if(opcion == 4){ //Cuando el valor de la variable opcion es igual a 4 sale del programa(bucle while true)
+        } // Cierre del primer switch
+        //Main.clearScreen();//Limpiar consola
+
+        if(Menu == 5){ //Cuando el valor de la variable opcion es igual a 4 sale del programa(bucle while true)
           break;
         }
       } //Llave donde acaba el bucle
-
-
-
 
     }
 }
