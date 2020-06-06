@@ -20,6 +20,7 @@ public class FuncionesMenu{
       System.out.println("1.- Registrar");
       System.out.println("2.- Modificar");
       System.out.println("3.- Eliminar");
+      System.out.println("4.- volver");
 
   }
   public void ImprimirMenuListar(){
@@ -27,6 +28,7 @@ public class FuncionesMenu{
       System.out.println("2.- Listar Por Marca");
       System.out.println("3.- Listar Stock");
       System.out.println("4.- Listar Productos Vendidos");
+      System.out.println("4.- volver");
   }
   public void clearScreen() {
     System.out.print("\033[H\033[2J");

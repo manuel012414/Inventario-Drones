@@ -20,23 +20,5 @@ public class Producto{
     this.cantidad = cantidad;
     this.precio = precio;
   }
-  public void RegistrarProducto(Producto producto){
-    // try{
-    //   BufferedWriter outputStream = new BufferedWriter(new FileWriter(new File("Almacenamiento.data"), true));
-    //
-    //   outputStream.write(this.id+":"+this.nombre+":"+this.descripcion+":"+marca+":"+cantidad+":"+precio);
-    //
-    //   outputStream.close();
-    // }
-    //   catch(Exception e){
-    //     System.out.println(e.getMessage());
-    //   }
-  }
-  public void ModificarProducto(){
-
-  }
-  public void EliminarProducto(){
-
-  }
 
 }

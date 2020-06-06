@@ -11,6 +11,9 @@ public class Main{
       Scanner scanner = new Scanner(System.in);
       FuncionesMenu Main = new FuncionesMenu();
       ListarProductos Lista = new ListarProductos();
+
+      FuncionProducto producto = new FuncionProducto();
+      producto.CargarDatos();
       int Menu, MenuProducto, MenuListar; //Variable que almacenara un valor de tipo entero.
       String valor2;
       while(true){ //bucle para el menu.
@@ -25,15 +28,17 @@ public class Main{
                     switch(MenuProducto) {
                       case 1: //Primera funcio
                         System.out.println("Registrar producto nuevo");
-                        //RegistrarProducto();
+                        producto.RegistrarProducto();
                       break;
 
                       case 2: //Segunda funcion
                         System.out.println("Actualizar un producto");
+                        producto.ModificarProducto();
                       break;
 
                       case 3: //Tercera funcion
                         System.out.println("Eliminar un producto");
+                        producto.EliminarProducto();
                       break;
 
                       case 4: //Cuarta funcion
