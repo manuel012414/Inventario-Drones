@@ -67,6 +67,7 @@ public class FuncionProducto{
 
   }
   public void ModificarProducto(){
+    System.out.println("------------------------------Modificar Producto----------------------------");
     System.out.print("Introducir el ID del Producto a cambiar: ");
     int valorid = scanner.nextInt();
     scanner.nextLine();
@@ -101,7 +102,7 @@ public class FuncionProducto{
                 modificar.write(f.id+":"+f.nombre+":"+f.descripcion+":"+f.marca+":"+f.cantidad+":"+f.precio+"\n");
               }
 
-              //System.out.println(f.id+":"+f.nombre+":"+f.descripcion+":"+f.marca+":"+f.cantidad+":"+f.precio+"\n");
+
               }else{
               modificar.write(f.id+":"+f.nombre+":"+f.descripcion+":"+f.marca+":"+f.cantidad+":"+f.precio+"\n");
 
@@ -116,8 +117,33 @@ public class FuncionProducto{
 
   }
   public void EliminarProducto(){
+
+    indice();
+    System.out.println("------------------------------------Eliminar Producto---------------------------");
+    System.out.print("Introducir el Nº del indice del Producto a borrar: ");
+    int indice = scanner.nextInt();
+    scanner.nextLine();
+      try{
+      BufferedWriter eliminar= new BufferedWriter(new FileWriter(new File("net/xeill/elpuig/Almacenamiento.data"),false));
+
+        ArrayProducto.remove(indice);
+        for(Producto f : ArrayProducto){
+
+          eliminar.write(f.id+":"+f.nombre+":"+f.descripcion+":"+f.marca+":"+f.cantidad+":"+f.precio+"\n");
+        }
+        eliminar.close();
+      }catch (Exception e) {
+        System.out.println(e.getMessage());
+      }
+  }
+  public void indice(){
+    System.out.println("-----------------------------------------Indice-----------------------------------");
+    int i = 0;
     for(Producto f : ArrayProducto){
-    System.out.println(f.id+":"+f.nombre+":"+f.descripcion+":"+f.marca+":"+f.cantidad+":"+f.precio+"\n");
+
+        System.out.println(i+"-"+f.id+"-"+f.nombre);
+        i++;
+
     }
   }
 

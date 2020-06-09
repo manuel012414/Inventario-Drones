@@ -9,6 +9,7 @@ public class FuncionesMenu{
     System.out.println("Hola Bienvenido!!");
   }
   public void ImprimirMenu(){
+    System.out.println("----------------------------Menu Principal---------------------");
     System.out.println("1.- Producto");
     System.out.println("2.- Listar");
     System.out.println("3.- Establecer Estado");
@@ -17,6 +18,7 @@ public class FuncionesMenu{
 
     }
   public void ImprimirMenuProducto(){
+    System.out.println("--------------------------Menu Producto---------------------------");
       System.out.println("1.- Registrar");
       System.out.println("2.- Modificar");
       System.out.println("3.- Eliminar");
@@ -24,6 +26,7 @@ public class FuncionesMenu{
 
   }
   public void ImprimirMenuListar(){
+    System.out.println("---------------------------Menu Listar-----------------------------");
       System.out.println("1.- Listar Todos");
       System.out.println("2.- Listar Por Marca");
       System.out.println("3.- Listar Stock");
